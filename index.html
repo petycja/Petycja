@@ -3,35 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petycja - Pobierz i Podpisz</title>
+    <title>Petycja - Problem z nauczycielami przedszkolnymi</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
-        .container { max-width: 600px; margin: auto; }
-        .download-btn { padding: 10px 20px; background-color: #28a745; color: white; border: none; cursor: pointer; }
-        .download-btn:hover { background-color: #218838; }
-        #counter { margin-top: 10px; font-size: 18px; }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Podpisz naszą petycję!</h1>
-        <p>Razem możemy coś zmienić. Pobierz plik, podpisz i prześlij dalej!</p>
-        <button class="download-btn" onclick="downloadFile()">Pobierz petycję</button>
-        <p id="counter">Pobrano: 0 razy</p>
-        <h2>O co walczymy?</h2>
-        <p>Tu możesz dodać więcej informacji o petycji oraz wrzucić zdjęcia.</p>
+        <h1>Problem z zatrudnieniem nauczycieli przedszkolnych</h1>
+        <img src="zdjecie.jpg" alt="Problem z nauczycielami">
+        <p>Od kilku lat w przedszkolach obserwuje się rosnący problem z brakiem nauczycieli. Główną przyczyną tej sytuacji jest wprowadzenie jednolitych pięcioletnich studiów magisterskich, które znacznie ograniczyły dostęp do zawodu. W przeciwieństwie do wcześniejszych rozwiązań, obecne przepisy nie pozwalają na zdobycie kwalifikacji poprzez studia podyplomowe czy system licencjat + magisterium, co skutecznie zmniejszyło liczbę chętnych do pracy w przedszkolach.</p>
+        
+        <p>Nowe zasady sprawiają, że absolwenci pedagogiki częściej decydują się na zatrudnienie w szkołach podstawowych, gdzie warunki pracy są korzystniejsze. Dodatkowo, w przeciwieństwie do nauczycieli szkół, przyszli pedagodzy przedszkolni nie mogą być zatrudniani jeszcze w trakcie studiów, co jeszcze bardziej pogłębia problem kadrowy.</p>
+        
+        <p>Samorządy i eksperci podkreślają, że konieczna jest zmiana przepisów, która umożliwi przyszłym nauczycielom przedszkolnym zdobywanie kwalifikacji na drodze studiów podyplomowych oraz systemu studiów I i II stopnia. Takie rozwiązanie zwiększyłoby liczbę potencjalnych kandydatów do pracy, a także dało większą elastyczność osobom, które chcą się przekwalifikować na nauczycieli wychowania przedszkolnego.</p>
+        
+        <p>Obecna sytuacja powoduje, że przedszkola mają trudności z zapewnieniem wystarczającej liczby nauczycieli, co w konsekwencji może skutkować ograniczeniem miejsc dla dzieci. Wprowadzenie bardziej elastycznych ścieżek kształcenia nauczycieli przedszkolnych mogłoby skutecznie rozwiązać ten problem i zapewnić odpowiednią opiekę najmłodszym.</p>
     </div>
-    
-    <script>
-        let count = localStorage.getItem("downloadCount") || 0;
-        document.getElementById("counter").innerText = `Pobrano: ${count} razy`;
-
-        function downloadFile() {
-            count++;
-            localStorage.setItem("downloadCount", count);
-            document.getElementById("counter").innerText = `Pobrano: ${count} razy`;
-            window.location.href = "petycja.pdf"; // Upewnij się, że plik PDF jest w tym samym katalogu co strona
-        }
-    </script>
 </body>
 </html>
