@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petycja - Pobierz i Podpisz</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        .container { max-width: 600px; margin: auto; }
+        .download-btn { padding: 10px 20px; background-color: #28a745; color: white; border: none; cursor: pointer; }
+        .download-btn:hover { background-color: #218838; }
+        #counter { margin-top: 10px; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Podpisz naszą petycję!</h1>
+        <p>Razem możemy coś zmienić. Pobierz plik, podpisz i prześlij dalej!</p>
+        <button class="download-btn" onclick="downloadFile()">Pobierz petycję</button>
+        <p id="counter">Pobrano: 0 razy</p>
+        <h2>O co walczymy?</h2>
+        <p>Tu możesz dodać więcej informacji o petycji oraz wrzucić zdjęcia.</p>
+    </div>
+    
+    <script>
+        let count = localStorage.getItem("downloadCount") || 0;
+        document.getElementById("counter").innerText = `Pobrano: ${count} razy`;
+
+        function downloadFile() {
+            count++;
+            localStorage.setItem("downloadCount", count);
+            document.getElementById("counter").innerText = `Pobrano: ${count} razy`;
+            window.location.href = "petycja.pdf"; // Upewnij się, że plik PDF jest w tym samym katalogu co strona
+        }
+    </script>
+</body>
+</html>
